@@ -90,6 +90,7 @@ class GerenciadorTarefas
         }
     }
 
+    // ...
     public void VisualizarTarefas()
     {
         Console.WriteLine("===== Lista de Tarefas =====");
@@ -102,7 +103,7 @@ class GerenciadorTarefas
         {
             for (int i = 0; i < listaDeTarefas.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {listaDeTarefas[i].Titulo} - Vencimento: {listaDeTarefas[i].DataVencimento.ToShortDateString()} - Concluída: {listaDeTarefas[i].Concluida}");
+                Console.WriteLine($"{i + 1}. {listaDeTarefas[i].Titulo} - Descrição: {listaDeTarefas[i].Descricao} - Vencimento: {listaDeTarefas[i].DataVencimento.ToShortDateString()} - Concluída: {listaDeTarefas[i].Concluida}");
             }
         }
     }
