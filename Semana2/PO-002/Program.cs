@@ -82,7 +82,7 @@ class GerenciadorTarefas
             Tarefa novaTarefa = new Tarefa(titulo, descricao, dataVencimento);
             listaDeTarefas.Add(novaTarefa);
 
-            Console.WriteLine("Tarefa criada com sucesso!");
+            Console.WriteLine("Parabéns, Tarefa criada com sucesso!");
         }
         else
         {
