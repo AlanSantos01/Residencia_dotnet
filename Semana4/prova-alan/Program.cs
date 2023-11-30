@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 class Pessoa
 {
@@ -46,18 +47,18 @@ class Program
             DateTime parsedDate = DateTime.ParseExact(dataNascimento, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
             Advogado advogado = new Advogado{
-            Nome = nome,
-            DataNascimento = DateTime.Parse(dataNascimento),
-            CPF = cpf,
-            CNA = cna
-        };
+                Nome = nome,
+                DataNascimento = DateTime.Parse(dataNascimento),
+                CPF = cpf,
+                CNA = cna
+            };
 
-        if (!IsDuplicate(advogados, advogado.CPF, advogado.CNA)){
-            advogados.Add(advogado);
-        }
-        else{
-            Console.WriteLine("CPF ou CNA já cadastrado na base de dados.");
-        }
+            if (!IsDuplicate(advogados, advogado.CPF, advogado.CNA)){
+                advogados.Add(advogado);
+            }
+            else{
+                Console.WriteLine("CPF ou CNA já cadastrado na base de dados.");
+            }
         }
         catch(Exception ex){
             Console.WriteLine(ex.Message);
@@ -81,7 +82,7 @@ class Program
             }else{
                 Console.WriteLine("CPF já cadastrado para outro cliente.");
             }
-        }catch(Fortmat Exception){
+        }catch(FormatException){
             Console.WriteLine("Formato de data inválido");
         }
         
@@ -92,4 +93,5 @@ class Program
     {
         return list.Exists(item => fields.Any(field => field == item.CPF || (item is Advogado advogado && field == advogado.CNA)));
     }
+    
 }
