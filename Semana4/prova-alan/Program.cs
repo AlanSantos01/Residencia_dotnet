@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-class Pessoa
+abstract class Pessoa
 {
     public string Nome { get; set; }
     public DateTime DataNascimento { get; set; }
