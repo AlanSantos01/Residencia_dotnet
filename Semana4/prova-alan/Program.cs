@@ -29,11 +29,15 @@ class Program
 
             AddAdvogado(advogados, "Helder", "01/01/1990", "12345678900", "ABCD1234");
             AddAdvogado(advogados, "Maria", "02/02/1995", "98765432100", "EFGH5678");
+            AddAdvogado(advogados, "Helder", "01/01/1998", "12749671900", "ABHQ1234");
+            AddAdvogado(advogados, "Maria", "02/02/1995", "98765432100", "EFGH5678");
 
             List<Cliente> clientes = new List<Cliente>();
 
             AddCliente(clientes, "Ana", "10/05/1985", "11111111111", "Solteiro", "Advogada");
             AddCliente(clientes, "Pedro", "15/09/1992", "22222222222", "Casado", "Engenheiro");
+            AddCliente(clientes, "Joao", "10/05/1995", "11411123111", "Solteiro", "Advogada");
+            AddCliente(clientes, "Gustavo", "15/09/1992", "23223242222", "Casado", "Engenheiro");
         }
         catch(Exception ex){
             Console.WriteLine(ex.Message);
