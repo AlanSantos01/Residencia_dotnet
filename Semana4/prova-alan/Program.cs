@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-class Pessoa{
-    public string nome;
-    public string dataNascimento;
-    public string cpf;
+class Pessoa
+{
+    public string Nome { get; set; }
+    public DateTime DataNascimento { get; set; }
+    public string CPF { get; set; }
 }
 
 class Advogado : Pessoa{
@@ -51,32 +52,33 @@ class Program
         {
             Console.WriteLine("CPF ou CNA já cadastrado para outro advogado.");
         }
-    }
-    List<Cliente> clientes = new List<Cliente>();
 
-    Cliente cliente1 = new Cliente();
-    cliente1.nome = "Ana";
-    cliente1.dataNascimento = "10/05/1985";
-    cliente1.cpf = "11111111111";
-    cliente1.estadoCivil = "Solteiro";
-    cliente1.profissao = "Advogada";
+        List<Cliente> clientes = new List<Cliente>();
 
-    if (!clientes.Exists(c => c.cpf == cliente1.cpf)){
-        clientes.Add(cliente1);
-    }else{
-        Console.WriteLine("CPF já cadastrado para outro cliente.");
-    }
+        Cliente cliente1 = new Cliente();
+        cliente1.nome = "Ana";
+        cliente1.dataNascimento = "10/05/1985";
+        cliente1.cpf = "11111111111";
+        cliente1.estadoCivil = "Solteiro";
+        cliente1.profissao = "Advogada";
 
-    Cliente cliente2 = new Cliente();   
-    cliente2.nome = "Pedro";
-    cliente2.dataNascimento = "15/09/1992";
-    cliente2.cpf = "22222222222";
-    cliente2.estadoCivil = "Casado";
-    cliente2.profissao = "Engenheiro";
+        if (!clientes.Exists(c => c.cpf == cliente1.cpf)){
+            clientes.Add(cliente1);
+        }else{
+            Console.WriteLine("CPF já cadastrado para outro cliente.");
+        }
 
-    if (!clientes.Exists(c => c.cpf == cliente2.cpf)){
-    clientes.Add(cliente2);
-    }else{
-    Console.WriteLine("CPF já cadastrado para outro cliente.");
+        Cliente cliente2 = new Cliente();   
+        cliente2.nome = "Pedro";
+        cliente2.dataNascimento = "15/09/1992";
+        cliente2.cpf = "22222222222";
+        cliente2.estadoCivil = "Casado";
+        cliente2.profissao = "Engenheiro";
+
+        if (!clientes.Exists(c => c.cpf == cliente2.cpf)){
+            clientes.Add(cliente2);
+        }else{
+            Console.WriteLine("CPF já cadastrado para outro cliente.");
+        }
     }
 }
