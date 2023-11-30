@@ -62,9 +62,9 @@ class Program
     cliente1.profissao = "Advogada";
 
     if (!clientes.Exists(c => c.cpf == cliente1.cpf)){
-    clientes.Add(cliente1);
+        clientes.Add(cliente1);
     }else{
-    Console.WriteLine("CPF já cadastrado para outro cliente.");
+        Console.WriteLine("CPF já cadastrado para outro cliente.");
     }
 
     Cliente cliente2 = new Cliente();   
